@@ -33,7 +33,7 @@ it('회원 가입 클릭 시 회원 가입 페이지로 이동한다', () => {
 });
 
 it('성공적으로 로그인 되었을 경우 메인 홈 페이지로 이동하며, 사용자 이름 "Maria"와 장바구니 아이콘이 노출된다', () => {
-  cy.login();
+  cy.login(); // 커스컴 커맨드. test-example-shopping-mall/cypress/support/commands.js 에 위치.
 
   cy.assertUrl('/');
   cy.findByText('Maria').should('exist');
