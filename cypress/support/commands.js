@@ -4,6 +4,9 @@ Cypress.Commands.add('login', () => {
   const username = 'maria@mail.com';
   const password = '12345';
 
+  // 쿠키, local storage, session storage에 있는 정보들을 캐싱
+  // 콜백 함수 실행 전 -> 모든 도메인의 쿠키, 로컬 스토리지, 세션 스토리지가 초기화됨.
+  // 초기화 진행 후 로그인 완료 -> 세션 정보 설정
   cy.session(username, () => {
     cy.visit('/login');
 
